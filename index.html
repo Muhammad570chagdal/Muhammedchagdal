@@ -1,518 +1,1100 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta name="google-site-verification" content="bvbazgfYqfvARCkWLxuQ3HEzqVNOV43Pd0zXNirYoXA" />
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M.Chagdal Aero Atlas — Pièces Aviation, Automobile & Poids Lourds</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#FFFFFF;
-    --panel:#F4F7FB;
-    --panel-line:#D7E0EC;
-    --brass:#C8202F;
-    --brass-dim:#8E1620;
-    --steel:#173F8C;
-    --bone:#12203D;
-    --muted:#5B6576;
-    --danger:#C8202F;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--bone);
-    font-family:'Inter',sans-serif;
-    line-height:1.5;
-  }
-  .grid-bg{
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-    background-image:
-      linear-gradient(rgba(23,63,140,0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(23,63,140,0.07) 1px, transparent 1px);
-    background-size:48px 48px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
-  }
 
-  /* ---------- Nav ---------- */
-  nav{
-    position:sticky; top:0; z-index:50;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 40px;
-    background:rgba(255,255,255,0.88);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--panel-line);
-  }
-  .brand{
-    font-family:'Archivo Expanded',sans-serif;
-    font-weight:800;
-    font-size:1.05rem;
-    letter-spacing:0.05em;
-    color:var(--bone);
-    display:flex; align-items:center; gap:10px;
-  }
-  .brand-mark{
-    width:28px;height:28px;
-    border:1.5px solid var(--brass);
-    border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;
-  }
-  .brand-mark svg{width:15px;height:15px;fill:var(--brass);}
-  .nav-links{display:flex;gap:28px;font-size:0.82rem;letter-spacing:0.04em;color:var(--muted);}
-  .nav-links a{color:var(--muted);text-decoration:none;transition:color .2s;}
-  .nav-links a:hover{color:var(--brass);}
+<title>M.Chagdal Aero Atlas | Aviation • Automobile • Poids Lourds</title>
 
-  /* ---------- Hero ---------- */
-  header.hero{
-    position:relative; z-index:1;
-    padding:110px 40px 80px;
-    max-width:1200px; margin:0 auto;
-  }
-  .tail-badge{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.72rem; letter-spacing:0.12em;
-    color:var(--brass);
-    border:1px solid var(--brass-dim);
-    padding:5px 12px;
-    border-radius:2px;
-    margin-bottom:28px;
-  }
-  .tail-badge::before{content:'';width:6px;height:6px;background:var(--brass);border-radius:50%;}
-  h1.hero-title{
-    font-family:'Archivo Expanded',sans-serif;
-    font-weight:800;
-    font-size:clamp(2.4rem, 5.6vw, 4.6rem);
-    line-height:0.98;
-    letter-spacing:-0.01em;
-    max-width:900px;
-    text-transform:uppercase;
-  }
-  h1.hero-title .accent{color:var(--brass);}
-  .hero-sub{
-    margin-top:26px;
-    max-width:600px;
-    color:var(--muted);
-    font-size:1.02rem;
-  }
-  .hero-meta{
-    margin-top:48px;
-    display:flex; gap:0;
-    border-top:1px solid var(--panel-line);
-    padding-top:24px;
-    flex-wrap:wrap;
-  }
-  .hero-meta div{
-    flex:1;
-    min-width:140px;
-    padding-right:24px;
-    border-right:1px solid var(--panel-line);
-    font-family:'IBM Plex Mono',monospace;
-  }
-  .hero-meta div:last-child{border-right:none;}
-  .hero-meta .num{font-size:1.5rem;color:var(--brass);font-weight:600;}
-  .hero-meta .lbl{font-size:0.68rem;color:var(--muted);letter-spacing:0.07em;margin-top:4px;text-transform:uppercase;}
+<meta name="description" content="Importateur marocain de pièces aéronautiques, automobiles et poids lourds. Vente d'avions, véhicules et composants premium allemands et belges.">
 
-  /* ---------- About ---------- */
-  section.about{
-    position:relative; z-index:1;
-    max-width:1200px; margin:0 auto;
-    padding:0 40px 80px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-  }
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--steel);
-    margin-bottom:14px;
-  }
-  .about h2{
-    font-family:'Archivo Expanded',sans-serif;
-    font-weight:700; font-size:1.7rem;
-    margin-bottom:16px;
-    text-transform:uppercase;
-  }
-  .about p{color:var(--muted); font-size:0.95rem; margin-bottom:14px;}
-  .origin-strip{
-    display:flex; gap:16px; margin-top:20px;
-  }
-  .origin-tag{
-    display:flex; align-items:center; gap:8px;
-    border:1px solid var(--panel-line);
-    background:var(--panel);
-    padding:9px 14px;
-    border-radius:3px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.75rem;
-    color:var(--bone);
-  }
-  .origin-tag .flag{width:16px;height:11px;border-radius:1px;flex-shrink:0;}
-  .flag-de{background:linear-gradient(#000 33%, #DD0000 33%, #DD0000 66%, #FFCE00 66%);}
-  .flag-be{background:linear-gradient(90deg,#000 33%,#FAE042 33%,#FAE042 66%,#ED2939 66%);}
+<meta name="keywords" content="Aviation Maroc, pièces aviation, pièces automobiles, poids lourds, Casablanca, avions à vendre, Mercedes, Porsche, MAN, Allemagne, Belgique">
 
-  .about-card{
-    background:var(--panel);
-    border:1px solid var(--panel-line);
-    border-radius:4px;
-    padding:28px;
-    align-self:start;
-  }
-  .about-card .card-cat{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--steel); margin-bottom:10px;
-  }
-  .about-list{list-style:none;}
-  .about-list li{
-    font-size:0.88rem; color:var(--bone);
-    padding:10px 0;
-    border-bottom:1px dashed var(--panel-line);
-    display:flex; gap:10px;
-  }
-  .about-list li:last-child{border-bottom:none;}
-  .about-list li::before{content:'—'; color:var(--brass); flex-shrink:0;}
+<meta name="author" content="Muhammad Chagdal">
 
-  /* ---------- Category switches ---------- */
-  .switch-panel{
-    position:relative; z-index:1;
-    max-width:1200px; margin:0 auto; padding:0 40px 40px;
-    display:flex; gap:14px; flex-wrap:wrap;
-  }
-  .switch{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.78rem; letter-spacing:0.06em;
-    color:var(--muted);
-    background:var(--panel);
-    border:1px solid var(--panel-line);
-    padding:11px 20px;
-    border-radius:3px;
-    cursor:pointer;
-    display:flex; align-items:center; gap:9px;
-    transition:border-color .2s, color .2s;
-    text-transform:uppercase;
-  }
-  .switch::before{
-    content:''; width:9px; height:9px; border-radius:50%;
-    background:var(--panel-line); border:1px solid var(--muted);
-    transition:background .2s, border-color .2s;
-  }
-  .switch:hover{color:var(--bone); border-color:var(--steel);}
-  .switch.active{color:var(--brass); border-color:var(--brass);}
-  .switch.active::before{background:var(--brass); border-color:var(--brass); box-shadow:0 0 8px var(--brass);}
+<meta name="robots" content="index, follow">
 
-  /* ---------- Grid ---------- */
-  main{
-    position:relative; z-index:1;
-    max-width:1200px; margin:0 auto; padding:10px 40px 60px;
-  }
-  .catalog-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
-    gap:20px;
-  }
-  .card{
-    background:var(--panel);
-    border:1px solid var(--panel-line);
-    border-radius:4px;
-    overflow:hidden;
-    position:relative;
-    transition:transform .25s, border-color .25s;
-  }
-  .card:hover{transform:translateY(-3px); border-color:var(--brass-dim);}
-  .card::before, .card::after{
-    content:''; position:absolute; width:10px; height:10px;
-    border-color:var(--brass-dim); opacity:0; transition:opacity .25s;
-  }
-  .card:hover::before, .card:hover::after{opacity:1;}
-  .card::before{top:8px; left:8px; border-top:1.5px solid; border-left:1.5px solid;}
-  .card::after{bottom:8px; right:8px; border-bottom:1.5px solid; border-right:1.5px solid;}
+<link rel="canonical"
+href="https://muhammad570chagdal.github.io/Muhammedchagdal/">
 
-  .card-visual{
-    height:170px;
-    display:flex; align-items:center; justify-content:center;
-    background:
-      repeating-linear-gradient(135deg, rgba(23,63,140,0.05) 0px, rgba(23,63,140,0.05) 1px, transparent 1px, transparent 14px),
-      linear-gradient(160deg, #EEF2F9, #E3E9F3);
-    border-bottom:1px solid var(--panel-line);
-    position:relative;
-  }
-  .card-visual svg{width:60px;height:60px;fill:none;stroke:var(--brass);stroke-width:1.2;opacity:0.85;}
-  .card-visual img{width:100%;height:100%;object-fit:cover;display:block;}
-  .origin-pin{
-    position:absolute; top:10px; right:10px;
-    display:flex; gap:4px;
-  }
-  .origin-pin .flag{width:14px;height:10px;border-radius:1px;}
-  .card-body{padding:18px 20px 20px;}
-  .card-cat{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--steel);
-  }
-  .card-title{
-    font-family:'Archivo Expanded',sans-serif;
-    font-weight:700; font-size:1.05rem;
-    margin:6px 0 12px;
-  }
-  .spec-list{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.76rem;
-    color:var(--muted);
-    display:grid; grid-template-columns:1fr 1fr;
-    gap:6px 10px;
-    padding:12px 0;
-    border-top:1px dashed var(--panel-line);
-    border-bottom:1px dashed var(--panel-line);
-    margin-bottom:16px;
-  }
-  .spec-list span{color:var(--bone);}
-  .card-footer{display:flex; align-items:center; justify-content:space-between; gap:10px;}
-  .price{font-family:'IBM Plex Mono',monospace; font-size:0.82rem; color:var(--brass);}
-  .price small{display:block; color:var(--muted); font-size:0.62rem; letter-spacing:0.05em; text-transform:uppercase; margin-top:2px;}
-  .wa-btn{
-    display:inline-flex; align-items:center; gap:7px;
-    background:transparent;
-    border:1px solid var(--brass-dim);
-    color:var(--brass);
-    font-family:'Inter',sans-serif;
-    font-size:0.76rem; font-weight:600;
-    padding:8px 14px;
-    border-radius:3px;
-    text-decoration:none;
-    transition:background .2s, color .2s;
-    white-space:nowrap;
-  }
-  .wa-btn:hover{background:var(--brass); color:#FFFFFF;}
-  .wa-btn svg{width:13px;height:13px;fill:currentColor;}
+<!-- Open Graph -->
 
-  /* ---------- Contact / Footer ---------- */
-  section.contact{
-    position:relative; z-index:1;
-    max-width:1200px; margin:0 auto;
-    padding:20px 40px 70px;
-  }
-  .contact-panel{
-    background:var(--panel);
-    border:1px solid var(--panel-line);
-    border-radius:6px;
-    padding:44px;
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:40px;
-    align-items:center;
-  }
-  .contact-panel h2{
-    font-family:'Archivo Expanded',sans-serif;
-    font-weight:700; font-size:1.6rem;
-    text-transform:uppercase;
-    margin-bottom:12px;
-  }
-  .contact-panel p{color:var(--muted); font-size:0.92rem;}
-  .contact-methods{display:flex; flex-direction:column; gap:14px;}
-  .contact-method{
-    display:flex; align-items:center; gap:14px;
-    border:1px solid var(--panel-line);
-    padding:16px 18px;
-    border-radius:4px;
-    text-decoration:none;
-    color:var(--bone);
-    transition:border-color .2s;
-  }
-  .contact-method:hover{border-color:var(--brass);}
-  .contact-method .ic{
-    width:36px;height:36px; flex-shrink:0;
-    border:1px solid var(--brass-dim); border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .contact-method .ic svg{width:16px;height:16px; fill:var(--brass);}
-  .contact-method .lbl{font-size:0.68rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase;}
-  .contact-method .val{font-family:'IBM Plex Mono',monospace; font-size:0.92rem; margin-top:2px;}
+<meta property="og:title"
+content="M.Chagdal Aero Atlas">
 
-  footer{
-    position:relative; z-index:1;
-    border-top:1px solid var(--panel-line);
-    padding:30px 40px;
-    display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;
-    font-size:0.78rem; color:var(--muted);
-  }
-  footer a{color:var(--brass); text-decoration:none;}
+<meta property="og:description"
+content="Premium Aircraft • Vehicles • Spare Parts">
 
-  @media (max-width:800px){
-    .about, .contact-panel{grid-template-columns:1fr;}
-  }
-  @media (max-width:640px){
-    nav{padding:16px 20px;}
-    .nav-links{display:none;}
-    header.hero{padding:70px 20px 50px;}
-    .switch-panel, main, .about, .contact, footer{padding-left:20px; padding-right:20px;}
-    .hero-meta{flex-wrap:wrap;}
-    .contact-panel{padding:28px;}
-  }
+<meta property="og:type"
+content="website">
 
-  :focus-visible{outline:2px solid var(--brass); outline-offset:2px;}
-</style>
-</head>
-<body>
+<meta property="og:url"
+content="https://muhammad570chagdal.github.io/Muhammedchagdal/">
 
-<div class="grid-bg"></div>
+<meta property="og:image"
+content="logo.png">
 
-<nav>
-  <div class="brand">
-    <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M22 16v-2l-8.5-5V3.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5V9L2 14v2l8.5-2.5V19L8 20.5V22l4-1 4 1v-1.5L13.5 19v-5.5L22 16z"/></svg></span>
-    M.CHAGDAL AERO ATLAS
-  </div>
-  <div class="nav-links">
-    <a href="#about">Qui sommes-nous</a>
-    <a href="#catalogue">Catalogue</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<!-- Twitter -->
 
-<header class="hero">
-  <div class="tail-badge">CN-AAM · CASABLANCA, MAROC</div>
-  <h1 class="hero-title">Pièces & Véhicules <span class="accent">de Précision</span></h1>
-  <p class="hero-sub">Importateur et distributeur de composants aéronautiques, automobiles et poids lourds de fabrication allemande et belge, ainsi que de véhicules et aéronefs sélectionnés.</p>
-  <div class="hero-meta">
-    <div><div class="num">04</div><div class="lbl">Catégories</div></div>
-    <div><div class="num">DE / BE</div><div class="lbl">Origine des pièces</div></div>
-    <div><div class="num">100%</div><div class="lbl">Qualité contrôlée</div></div>
-    <div><div class="num">24/7</div><div class="lbl">Réponse WhatsApp</div></div>
-  </div>
-</header>
+<meta name="twitter:card"
+content="summary_large_image">
 
-<section class="about" id="about">
-  <div>
-    <div class="eyebrow">Qui sommes-nous</div>
-    <h2>M.Chagdal Aero Atlas</h2>
-    <p>M.Chagdal Aero Atlas est une entreprise marocaine spécialisée dans la vente d'avions, de véhicules, ainsi que dans l'importation et la distribution de pièces détachées destinées à l'aviation, à l'automobile et aux poids lourds.</p>
-    <p>Nous travaillons exclusivement avec des composants de fabrication allemande et belge, reconnus pour leur fiabilité et leurs normes de qualité strictes, afin de garantir à nos clients des pièces durables et conformes aux exigences techniques les plus élevées.</p>
-    <p>Basée à Casablanca, notre équipe accompagne particuliers, ateliers et professionnels du secteur dans le choix, l'approvisionnement et l'installation de pièces adaptées à chaque aéronef, véhicule ou poids lourd.</p>
-    <div class="origin-strip">
-      <div class="origin-tag"><span class="flag flag-de"></span> Fabrication Allemande</div>
-      <div class="origin-tag"><span class="flag flag-be"></span> Fabrication Belge</div>
-    </div>
-  </div>
-  <div class="about-card">
-    <div class="card-cat">Notre engagement</div>
-    <ul class="about-list">
-      <li>Pièces sourcées auprès de fabricants certifiés en Allemagne et en Belgique</li>
-      <li>Contrôle qualité systématique avant mise en catalogue</li>
-      <li>Conseil technique pour identifier la pièce compatible avec votre appareil</li>
-      <li>Accompagnement pour la vente d'avions et de véhicules d'occasion vérifiés</li>
-      <li>Devis personnalisé et prise de rendez-vous sur demande</li>
-    </ul>
-  </div>
-</section>
+<meta name="twitter:title"
+content="M.Chagdal Aero Atlas">
 
-<div class="switch-panel" id="switchPanel">
-  <div class="switch active" data-cat="all">Tout afficher</div>
-  <div class="switch" data-cat="plane">Avions</div>
-  <div class="switch" data-cat="car">Véhicules</div>
-  <div class="switch" data-cat="truck">Poids lourds</div>
-  <div class="switch" data-cat="part">Pièces détachées</div>
-</div>
+<meta name="twitter:description"
+content="Aircraft • Cars • Trucks • Spare Parts">
 
-<main id="catalogue">
-  <div class="catalog-grid" id="grid"></div>
-</main>
+<!-- Fonts -->
 
-<section class="contact" id="contact">
-  <div class="contact-panel">
-    <div>
-      <h2>Pour toute demande de renseignement ou de rendez-vous</h2>
-      <p>Notre équipe reste disponible pour vous conseiller sur le choix d'une pièce, d'un véhicule ou d'un aéronef, établir un devis, ou fixer un rendez-vous dans nos locaux à Casablanca.</p>
-    </div>
-    <div class="contact-methods">
-      <a class="contact-method" href="tel:+212533299000">
-        <span class="ic"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.1 21 3 13.9 3 5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2.3 2.3z"/></svg></span>
-        <div><div class="lbl">Téléphone</div><div class="val">05 33 29 90 00</div></div>
-      </a>
-      <a class="contact-method" href="mailto:muhammedchagdal@yahoo.com">
-        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 12V8.24l-8 7-8-7V18h16z"/></svg></span>
-        <div><div class="lbl">Email</div><div class="val" style="font-size:0.8rem;">muhammedchagdal@yahoo.com</div></div>
-      </a>
-    </div>
-  </div>
-</section>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<footer>
-  <div>© 2026 M.Chagdal Aero Atlas — Casablanca, Maroc.<br>Catalogue édité par Muhammad Chagdal.</div>
-  <div>Tél : <a href="tel:+212533299000">05 33 29 90 00</a> · Email : <a href="mailto:muhammedchagdal@yahoo.com">muhammedchagdal@yahoo.com</a></div>
-</footer>
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<script>
-const ICONS = {
-  plane: `<svg viewBox="0 0 24 24"><path d="M22 16v-2l-8.5-5V3.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5V9L2 14v2l8.5-2.5V19L8 20.5V22l4-1 4 1v-1.5L13.5 19v-5.5L22 16z"/></svg>`,
-  car: `<svg viewBox="0 0 24 24"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11m-14 0h14m-14 0a2 2 0 0 0-2 2v4h2m14-6a2 2 0 0 1 2 2v4h-2m-14 0a2 2 0 0 0 2 2 2 2 0 0 0 2-2m10 0a2 2 0 0 0 2 2 2 2 0 0 0 2-2m-14 0h10"/></svg>`,
-  truck: `<svg viewBox="0 0 24 24"><path d="M3 6h11v9H3V6zm11 3h4l3 3v3h-7V9zM6.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>`,
-  part: `<svg viewBox="0 0 24 24"><path d="M12 2l2 4 4-1-1 4 4 2-4 2 1 4-4-1-2 4-2-4-4 1 1-4-4-2 4-2-1-4 4 1z"/></svg>`
-};
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
-const WM = (file) => `https://commons.wikimedia.org/wiki/Special:FilePath/${file}?width=700`;
+<!-- Schema -->
 
-const PRODUCTS = [
-  {cat:'plane', name:'Cessna 172 Skyhawk', origin:null, year:'2011', spec1:['Heures de vol','3 200 h'], spec2:['Moteur','Lycoming O-320'], price:'Prix sur demande', priceSub:'Devis après visite technique', img:WM('Cessna_172_C-FKWO.jpg')},
-  {cat:'plane', name:'Diamond DA40', origin:null, year:'2015', spec1:['Heures de vol','1 800 h'], spec2:['Moteur','AE 300 Diesel'], price:'Prix sur demande', priceSub:'Devis après visite technique', img:WM('Cessna_172_C-FKWO.jpg')},
-  {cat:'plane', name:'Piper PA-28 Cherokee', origin:null, year:'2008', spec1:['Heures de vol','4 100 h'], spec2:['Places','4'], price:'Prix sur demande', priceSub:'Devis après visite technique', img:WM('Cessna_172_C-FKWO.jpg')},
-  {cat:'car', name:'Porsche 911 (997)', origin:null, year:'2009', spec1:['Kilométrage','78 000 km'], spec2:['Boîte','Manuelle'], price:'Prix sur demande', priceSub:'Devis après visite technique', img:WM('2008_Porsche_911_997_Carrera_2S.jpg')},
-  {cat:'car', name:'Range Rover Sport', origin:null, year:'2018', spec1:['Kilométrage','62 000 km'], spec2:['Moteur','V6 Diesel'], price:'Prix sur demande', priceSub:'Devis après visite technique', img:WM('ALL-NEW_RANGE_ROVER_SPORT_REVEALED_(8594176684).jpg')},
-  {cat:'car', name:'Mercedes Classe G', origin:null, year:'2016', spec1:['Kilométrage','54 000 km'], spec2:['Moteur','V8 Biturbo'], price:'Prix sur demande', priceSub:'Devis après visite technique', img:WM('Blinker_Mercedes_G-Klasse_AMG_2018.jpg')},
-  {cat:'truck', name:'MAN TGX 18.440', origin:'de', year:'2017', spec1:['Kilométrage','410 000 km'], spec2:['Moteur','D26 Euro 6'], price:'Prix sur demande', priceSub:'Devis après visite technique', img:WM('MAN_TGX_18.500_(Westerstede,_2022).jpg')},
-  {cat:'truck', name:'Mercedes Actros 1845', origin:'de', year:'2019', spec1:['Kilométrage','320 000 km'], spec2:['Moteur','OM 471'], price:'Prix sur demande', priceSub:'Devis après visite technique', img:WM('Mercedes-Benz_ACTROS_(MP1)_front.JPG')},
-  {cat:'part', name:'Hélice bipale aluminium', origin:'de', year:'Neuf', spec1:['Fabricant','Allemagne'], spec2:['Compatibilité','Lycoming'], price:'38 500 MAD', priceSub:'Qualité premium', img:WM('Lycoming_O-320-D2A_engine_A.JPG')},
-  {cat:'part', name:'Avionique Garmin G3X', origin:'be', year:'Neuf', spec1:['Distribution','Belgique'], spec2:['Type','Glass cockpit'], price:'52 000 MAD', priceSub:'Kit complet certifié', img:WM('Cessna_172SP_G1000_01.jpg')},
-  {cat:'part', name:'Train d\\'atterrissage', origin:'de', year:'Révisé', spec1:['Fabricant','Allemagne'], spec2:['Compatibilité','Cessna 172'], price:'27 800 MAD', priceSub:'Qualité premium', img:WM('Cessna_172_C-FKWO.jpg')},
-  {cat:'part', name:'Turbocompresseur diesel', origin:'de', year:'Neuf', spec1:['Fabricant','Allemagne'], spec2:['Compatibilité','MAN / Mercedes'], price:'9 400 MAD', priceSub:'Qualité premium', img:WM('Turbocharger.jpg')},
-  {cat:'part', name:'Kit de freinage poids lourd', origin:'be', year:'Neuf', spec1:['Fabricant','Belgique'], spec2:['Compatibilité','Essieu avant/arrière'], price:'6 200 MAD', priceSub:'Kit complet', img:WM('Brembo_Brakes.jpg')},
-  {cat:'part', name:'Amortisseurs sport (paire)', origin:'de', year:'Neuf', spec1:['Fabricant','Allemagne'], spec2:['Compatibilité','Porsche 911'], price:'11 900 MAD', priceSub:'Qualité premium', img:WM('Coilovers.jpg')},
-];
+<script type="application/ld+json">
 
-const CAT_LABEL = {plane:'Aviation', car:'Automobile', truck:'Poids lourd', part:'Pièce détachée'};
+{
+"@context":"https://schema.org",
 
-function render(filter){
-  const grid = document.getElementById('grid');
-  grid.innerHTML = '';
-  PRODUCTS.filter(p => filter==='all' || p.cat===filter).forEach(p => {
-    const msg = encodeURIComponent(`Bonjour, je suis intéressé(e) par : ${p.name} (${p.year})`);
-    const card = document.createElement('div');
-    card.className = 'card';
-    const originPin = p.origin ? `<div class="origin-pin"><span class="flag flag-${p.origin}"></span></div>` : '';
-    card.innerHTML = `
-      <div class="card-visual">${originPin}${ICONS[p.cat]}</div>
-      <div class="card-body">
-        <div class="card-cat">${CAT_LABEL[p.cat]}</div>
-        <div class="card-title">${p.name}</div>
-        <div class="spec-list">
-          <div>${p.spec1[0]}<br><span>${p.spec1[1]}</span></div>
-          <div>${p.spec2[0]}<br><span>${p.spec2[1]}</span></div>
-        </div>
-        <div class="card-footer">
-          <span class="price">${p.price}<small>${p.priceSub}</small></span>
-          <a class="wa-btn" href="https://wa.me/212533299000?text=${msg}" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.5-.7-2.9-1.2-4.8-4.1-5-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.4.4-.2.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.1.5.1.7-.1.2-.2.8-1 1-1.3.2-.3.4-.3.7-.2s1.9.9 2.2 1.1c.3.2.5.2.6.4.1.2.1.9-.2 1.6z"/></svg>
-            Contacter
-          </a>
-        </div>
-      </div>`;
-    grid.appendChild(card);
-  });
+"@type":"Organization",
+
+"name":"M.Chagdal Aero Atlas",
+
+"url":"https://muhammad570chagdal.github.io/Muhammedchagdal/",
+
+"telephone":"+212533299000",
+
+"email":"muhammedchagdal@yahoo.com",
+
+"address":{
+"@type":"PostalAddress",
+"addressLocality":"Casablanca",
+"addressCountry":"MA"
 }
 
-document.querySelectorAll('.switch').forEach(sw => {
-  sw.addEventListener('click', () => {
-    document.querySelectorAll('.switch').forEach(s => s.classList.remove('active'));
-    sw.classList.add('active');
-    render(sw.dataset.cat);
-  });
-});
+}
 
-render('all');
 </script>
 
-</body>
-</html>
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Inter,sans-serif;
+
+}
+
+body{
+
+background:#ffffff;
+
+color:#0f172a;
+
+overflow-x:hidden;
+
+}
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:20px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid #e5e7eb;
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:800;
+
+color:#b91c1c;
+
+letter-spacing:1px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+margin-left:30px;
+
+color:#334155;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#b91c1c;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:0 8%;
+
+background:linear-gradient(135deg,#ffffff,#eef5ff);
+
+}
+
+.hero h1{
+
+font-size:65px;
+
+font-weight:800;
+
+line-height:1.1;
+
+max-width:950px;
+
+}
+
+.hero h1 span{
+
+color:#b91c1c;
+
+}
+
+.hero p{
+
+margin-top:25px;
+
+font-size:20px;
+
+color:#64748b;
+
+max-width:800px;
+
+margin-inline:auto;
+
+}
+
+.hero button{
+
+margin-top:40px;
+
+padding:16px 40px;
+
+background:#173F8C;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.hero button:hover{
+
+background:#0f2d69;
+
+transform:translateY(-3px);
+
+}
+
+section{
+
+padding:110px 8%;
+
+}
+
+h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+color:#173F8C;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+M.CHAGDAL AERO ATLAS
+
+</div>
+
+<nav>
+
+<a href="#about">À propos</a>
+
+<a href="#catalogue">Catalogue</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>
+
+Aircraft • Vehicles •
+
+<span>Premium Parts</span>
+
+</h1>
+
+<p>
+
+Importateur marocain spécialisé dans les pièces aéronautiques,
+automobiles et poids lourds de fabrication allemande et belge.
+
+</p>
+
+<button>
+
+Découvrir le catalogue
+
+</button>
+
+</div>
+
+</section>
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="section-title">
+
+<h2>Qui sommes-nous ?</h2>
+
+<p>
+
+M.Chagdal Aero Atlas est une société marocaine basée à Casablanca,
+spécialisée dans l'importation et la distribution de pièces
+aéronautiques, automobiles et poids lourds.
+
+Nous proposons également la vente de véhicules et d'aéronefs
+sélectionnés selon des normes de qualité élevées.
+
+</p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+
+<h3>15+</h3>
+
+<span>Années d'expérience</span>
+
+</div>
+
+<div class="stat-box">
+
+<h3>1000+</h3>
+
+<span>Clients satisfaits</span>
+
+</div>
+
+<div class="stat-box">
+
+<h3>DE • BE</h3>
+
+<span>Origine des pièces</span>
+
+</div>
+
+<div class="stat-box">
+
+<h3>24/7</h3>
+
+<span>Support WhatsApp</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section>
+
+<div class="section-title">
+
+<h2>Nos Services</h2>
+
+<p>
+
+Des solutions professionnelles pour l'aviation,
+l'automobile et les poids lourds.
+
+</p>
+
+</div>
+
+<div class="services">
+
+<div class="service-card">
+
+<div class="icon">✈️</div>
+
+<h3>Aviation</h3>
+
+<p>
+
+Vente d'avions,
+pièces certifiées,
+équipements aéronautiques
+et accompagnement technique.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon">🚗</div>
+
+<h3>Automobile</h3>
+
+<p>
+
+Vente de véhicules premium,
+pièces allemandes,
+service personnalisé.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon">🚛</div>
+
+<h3>Poids Lourds</h3>
+
+<p>
+
+Distribution de composants
+pour camions,
+transport professionnel
+et maintenance.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon">⚙️</div>
+
+<h3>Pièces Détachées</h3>
+
+<p>
+
+Importation directe
+depuis l'Allemagne
+et la Belgique.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CATALOGUE ================= -->
+
+<section id="catalogue">
+
+<div class="section-title">
+
+<h2>Notre Catalogue</h2>
+
+<p>
+
+Découvrez une sélection
+de produits haut de gamme.
+
+</p>
+
+</div>
+
+<div class="filters">
+
+<button class="active">Tout</button>
+
+<button>Avions</button>
+
+<button>Voitures</button>
+
+<button>Poids Lourds</button>
+
+<button>Pièces</button>
+
+</div>
+
+<div class="catalog-grid">
+
+<div class="product">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cessna_172_C-FKWO.jpg"
+alt="Cessna 172 Skyhawk"
+loading="lazy">
+
+<h3>Cessna 172 Skyhawk</h3>
+
+<p>
+
+Avion léger
+4 places.
+
+</p>
+
+<a href="#">Voir plus</a>
+
+</div>
+
+<div class="product">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/09/2008_Porsche_911_997_Carrera_2S.jpg"
+alt="Porsche 911"
+loading="lazy">
+
+<h3>Porsche 911</h3>
+
+<p>
+
+Sport Premium.
+
+</p>
+
+<a href="#">Voir plus</a>
+
+</div>
+
+<div class="product">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/MAN_TGX_18.500.jpg"
+alt="MAN TGX"
+loading="lazy">
+
+<h3>MAN TGX</h3>
+
+<p>
+
+Poids lourd.
+
+</p>
+
+<a href="#">Voir plus</a>
+
+</div>
+
+</div>
+
+</section>
+.section-title{
+text-align:center;
+max-width:850px;
+margin:auto auto 60px;
+}
+
+.section-title p{
+color:#64748b;
+margin-top:15px;
+font-size:18px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+margin-top:60px;
+}
+
+.stat-box{
+background:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.stat-box h3{
+font-size:42px;
+color:#b91c1c;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.service-card{
+padding:35px;
+background:white;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+}
+
+.icon{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.catalog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.product{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.product img{
+width:100%;
+height:230px;
+object-fit:cover;
+}
+
+.product h3{
+padding:20px;
+}
+
+.product p{
+padding:0 20px;
+color:#64748b;
+}
+
+.product a{
+display:inline-block;
+margin:20px;
+background:#173F8C;
+color:white;
+padding:12px 24px;
+text-decoration:none;
+border-radius:8px;
+}
+  <!-- ================= RECHERCHE ================= -->
+
+<section id="search">
+
+<div class="section-title">
+<h2>Rechercher un produit</h2>
+<p>Trouvez rapidement un avion, un véhicule ou une pièce.</p>
+</div>
+
+<div class="search-box">
+<input
+type="text"
+id="searchInput"
+placeholder="Rechercher..."
+onkeyup="searchProducts()">
+</div>
+
+</section>
+
+<!-- ================= PRODUITS ================= -->
+
+<section>
+
+<div class="catalog-grid" id="products">
+
+<div class="product" data-name="Cessna 172 avion aviation">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cessna_172_C-FKWO.jpg"
+alt="Cessna 172"
+loading="lazy">
+<h3>Cessna 172 Skyhawk</h3>
+<p>Avion léger 4 places.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="Diamond DA40 avion">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Diamond_DA40.jpg"
+alt="Diamond DA40"
+loading="lazy">
+<h3>Diamond DA40</h3>
+<p>Avion moderne.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="Piper PA28 avion">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Piper_PA-28-181_Archer_II.jpg"
+alt="Piper PA-28"
+loading="lazy">
+<h3>Piper PA-28</h3>
+<p>Avion école.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="Porsche 911 voiture">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/09/2008_Porsche_911_997_Carrera_2S.jpg"
+alt="Porsche 911"
+loading="lazy">
+<h3>Porsche 911</h3>
+<p>Sport Premium.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="Mercedes Classe G">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Blinker_Mercedes_G-Klasse_AMG_2018.jpg"
+alt="Mercedes Classe G"
+loading="lazy">
+<h3>Mercedes Classe G</h3>
+<p>SUV Premium.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="Range Rover">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Range_Rover_Sport.jpg"
+alt="Range Rover Sport"
+loading="lazy">
+<h3>Range Rover Sport</h3>
+<p>Luxury SUV.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="MAN TGX camion">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/MAN_TGX.jpg"
+alt="MAN TGX"
+loading="lazy">
+<h3>MAN TGX</h3>
+<p>Poids lourd.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="Mercedes Actros camion">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Mercedes-Benz_Actros.jpg"
+alt="Mercedes Actros"
+loading="lazy">
+<h3>Mercedes Actros</h3>
+<p>Camion professionnel.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="Turbo diesel piece">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Turbocharger.jpg"
+alt="Turbo Diesel"
+loading="lazy">
+<h3>Turbo Diesel</h3>
+<p>Fabrication Allemande.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+<div class="product" data-name="Freins poids lourds">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Brembo_Brakes.jpg"
+alt="Freins"
+loading="lazy">
+<h3>Kit de Freinage</h3>
+<p>Fabrication Belge.</p>
+<a href="https://wa.me/212533299000">WhatsApp</a>
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function searchProducts(){
+
+let input=document.getElementById("searchInput").value.toLowerCase();
+
+let cards=document.querySelectorAll(".product");
+
+cards.forEach(card=>{
+
+let txt=card.dataset.name.toLowerCase();
+
+card.style.display=txt.includes(input)?"block":"none";
+
+});
+
+}
+
+</script>
+.search-box{
+max-width:700px;
+margin:40px auto;
+}
+
+.search-box input{
+width:100%;
+padding:18px;
+font-size:18px;
+border:1px solid #ddd;
+border-radius:10px;
+outline:none;
+}
+
+.search-box input:focus{
+border-color:#173F8C;
+box-shadow:0 0 10px rgba(23,63,140,.2);
+}
+  <!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="section-title">
+
+<h2>Contactez-nous</h2>
+
+<p>
+
+Notre équipe est disponible pour répondre à toutes vos demandes.
+
+</p>
+
+</div>
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<div class="contact-card">
+
+<h3>📞 Téléphone</h3>
+
+<p>+212 533 29 90 00</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>📱 WhatsApp</h3>
+
+<p>+212 533 29 90 00</p>
+
+<a class="btn-contact"
+href="https://wa.me/212533299000"
+target="_blank">
+
+Discuter sur WhatsApp
+
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<h3>📧 Email</h3>
+
+<p>muhammedchagdal@yahoo.com</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>📍 Adresse</h3>
+
+<p>Casablanca, Maroc</p>
+
+</div>
+
+</div>
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=Casablanca,Morocco&output=embed"
+loading="lazy"
+allowfullscreen>
+
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+<h2>M.CHAGDAL AERO ATLAS</h2>
+
+<p>
+
+Aircraft • Vehicles • Premium Spare Parts
+
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<a href="#about">À propos</a>
+
+<a href="#catalogue">Catalogue</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="footer-copy">
+
+© 2026 M.Chagdal Aero Atlas.
+
+Tous droits réservés.
+
+</div>
+
+</footer>
+
+<!-- ================= WHATSAPP FLOAT ================= -->
+
+<a
+class="floating-whatsapp"
+href="https://wa.me/212533299000"
+target="_blank">
+
+💬
+
+</a>
+.contact-container{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:40px;
+
+align-items:start;
+
+}
+
+.contact-info{
+
+display:grid;
+
+gap:20px;
+
+}
+
+.contact-card{
+
+padding:25px;
+
+background:white;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.contact-card h3{
+
+margin-bottom:10px;
+
+color:#173F8C;
+
+}
+
+.btn-contact{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:12px 22px;
+
+background:#25D366;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:600;
+
+}
+
+.map iframe{
+
+width:100%;
+
+height:420px;
+
+border:none;
+
+border-radius:15px;
+
+}
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+padding:70px 8%;
+
+margin-top:100px;
+
+text-align:center;
+
+}
+
+.footer-links{
+
+margin:25px 0;
+
+}
+
+.footer-links a{
+
+margin:0 15px;
+
+color:white;
+
+text-decoration:none;
+
+}
+
+.footer-links a:hover{
+
+color:#38bdf8;
+
+}
+
+.footer-copy{
+
+margin-top:20px;
+
+color:#94a3b8;
+
+}
+
+.floating-whatsapp{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+background:#25D366;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+text-decoration:none;
+
+color:white;
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+z-index:9999;
+
+transition:.3s;
+
+}
+
+.floating-whatsapp:hover{
+
+transform:scale(1.12);
+
+}
+
+@media(max-width:900px){
+
+.contact-container{
+
+grid-template-columns:1fr;
+
+}
+
+}
