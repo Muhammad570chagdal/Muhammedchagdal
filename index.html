@@ -1,478 +1,683 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>M.CHAGDAL AERO ATLAS | Aviation • Automobile • Poids Lourds</title>
-
-<meta name="description" content="Importateur marocain de pièces aéronautiques, automobiles et poids lourds au Maroc.">
-
-<meta name="keywords" content="Aviation Maroc, Aircraft, Mercedes, MAN, Porsche, Casablanca">
-
+<title>M.Chagdal Aero Atlas | Aviation • Automobile • Poids Lourds</title>
+<meta name="description" content="Importateur marocain de pièces aéronautiques, automobiles et poids lourds. Vente d'avions, véhicules et composants premium allemands et belges.">
+<meta name="keywords" content="Aviation Maroc, pièces aviation, pièces automobiles, poids lourds, Casablanca, avions à vendre, Mercedes, Porsche, MAN, Allemagne, Belgique">
 <meta name="author" content="Muhammad Chagdal">
-
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://muhammad570chagdal.github.io/Muhammedchagdal/">
+<meta property="og:title" content="M.Chagdal Aero Atlas">
+<meta property="og:description" content="Aircraft • Vehicles • Premium Spare Parts — Allemagne · Belgique">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muhammad570chagdal.github.io/Muhammedchagdal/">
+<meta property="og:image" content="https://muhammad570chagdal.github.io/Muhammedchagdal/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="M.Chagdal Aero Atlas">
+<meta name="twitter:description" content="Aircraft • Cars • Trucks • Spare Parts">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Organization",
+"name":"M.Chagdal Aero Atlas",
+"url":"https://muhammad570chagdal.github.io/Muhammedchagdal/",
+"telephone":"+212533299000",
+"email":"muhammedchagdal@yahoo.com",
+"address":{"@type":"PostalAddress","addressLocality":"Casablanca","addressCountry":"MA"}
+}
+</script>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
+:root{
+  --navy-deep:#071527;
+  --navy:#0B1F3A;
+  --steel:#1B4D89;
+  --steel-light:#3B6FA6;
+  --alu:#C9CED6;
+  --alu-light:#F3F5F7;
+  --ink:#0F172A;
+  --muted:#5B6472;
+  --amber:#E8A33D;
+  --white:#FFFFFF;
+  --line:#E2E6EA;
+  --radius:14px;
 }
-
-html{
-scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{
-background:#ffffff;
-color:#0f172a;
-overflow-x:hidden;
+  font-family:'Inter',sans-serif;
+  background:var(--white);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+a{color:inherit;}
+img{display:block;max-width:100%;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 6%;}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
 }
 
+/* ---------- Header ---------- */
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(255,255,255,.95);
-backdrop-filter:blur(12px);
-border-bottom:1px solid #e5e7eb;
-z-index:1000;
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 6%;
+  background:rgba(7,21,39,.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:.3s;
 }
-
 .logo{
-font-size:28px;
-font-weight:800;
-color:#b91c1c;
+  display:flex;align-items:center;gap:10px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:19px;font-weight:700;color:#fff;letter-spacing:.3px;
 }
-
-nav a{
-text-decoration:none;
-margin-left:30px;
-color:#334155;
-font-weight:600;
-transition:.3s;
+.logo .mark{
+  width:34px;height:34px;border:1.5px solid var(--amber);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:var(--amber);
+  font-size:16px;flex:none;
 }
-
-nav a:hover{
-color:#b91c1c;
+.logo small{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:400;color:var(--alu);letter-spacing:1.5px;margin-top:2px;}
+nav{display:flex;align-items:center;gap:34px;}
+nav a{text-decoration:none;color:var(--alu-light);font-weight:500;font-size:14.5px;letter-spacing:.2px;position:relative;padding-bottom:4px;}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--amber);transition:.25s;}
+nav a:hover::after{width:100%;}
+.nav-cta{
+  background:var(--amber);color:var(--navy-deep) !important;padding:10px 20px;border-radius:8px;font-weight:600 !important;
 }
+.nav-cta::after{display:none;}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px;}
 
+/* ---------- Hero ---------- */
 .hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 8%;
-background:linear-gradient(135deg,#ffffff,#eef5ff);
+  min-height:100vh;position:relative;display:flex;align-items:center;
+  background:radial-gradient(ellipse at 70% 20%, #0e2a4d 0%, var(--navy) 45%, var(--navy-deep) 100%);
+  color:#fff;overflow:hidden;padding:140px 6% 100px;
 }
-
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:56px 56px;
+  mask-image:linear-gradient(to bottom, transparent, black 15%, black 75%, transparent);
+}
+.compass{
+  position:absolute;right:-120px;top:50%;transform:translateY(-50%);
+  width:640px;height:640px;opacity:.5;
+  animation:spin 90s linear infinite;
+}
+@keyframes spin{to{transform:translateY(-50%) rotate(360deg);}}
+.compass svg{width:100%;height:100%;}
+.hero-inner{position:relative;z-index:2;max-width:680px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;
+  color:var(--amber);border:1px solid rgba(232,163,61,.4);
+  padding:7px 14px;border-radius:30px;margin-bottom:28px;
+}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber);}
 .hero h1{
-font-size:64px;
-font-weight:800;
-line-height:1.1;
+  font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-1px;
 }
-
-.hero h1 span{
-color:#b91c1c;
-}
-
-.hero p{
-margin-top:25px;
-font-size:20px;
-color:#64748b;
-max-width:800px;
-margin-inline:auto;
-}
-
+.hero h1 em{font-style:normal;color:var(--amber);}
+.hero p{margin-top:24px;font-size:18px;line-height:1.6;color:var(--alu);max-width:520px;}
+.hero-cta{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;}
 .btn{
-display:inline-block;
-margin-top:35px;
-padding:16px 40px;
-background:#173F8C;
-color:#fff;
-text-decoration:none;
-border-radius:8px;
-transition:.3s;
+  border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
+  padding:16px 30px;border-radius:9px;transition:.25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary{background:var(--amber);color:var(--navy-deep);}
+.btn-primary:hover{background:#f3b158;transform:translateY(-2px);}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.06);}
+.hero-coord{
+  position:absolute;left:6%;bottom:36px;z-index:2;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--alu);
+  display:flex;gap:26px;letter-spacing:.5px;
+}
+.hero-coord span{color:var(--amber);}
+
+/* ---------- Ticker ---------- */
+.ticker-wrap{
+  background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);
+  overflow:hidden;padding:18px 0;
+}
+.ticker{display:flex;width:max-content;animation:tick 32s linear infinite;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ticker span{
+  font-family:'IBM Plex Mono',monospace;color:var(--alu);font-size:13px;letter-spacing:2px;
+  padding:0 34px;white-space:nowrap;border-right:1px solid rgba(255,255,255,.12);
 }
 
-.btn:hover{
-background:#0f2d69;
-transform:translateY(-3px);
+/* ---------- Section shared ---------- */
+section{padding:120px 0;}
+.section-title{max-width:640px;margin-bottom:64px;}
+.tag{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2.5px;color:var(--steel);
+  text-transform:uppercase;display:block;margin-bottom:14px;
+}
+.section-title h2{font-size:40px;font-weight:700;letter-spacing:-0.5px;color:var(--navy);line-height:1.15;}
+.section-title p{margin-top:16px;font-size:16.5px;color:var(--muted);line-height:1.7;}
+
+/* ---------- Ruler divider (signature) ---------- */
+.ruler{display:flex;align-items:flex-end;gap:3px;height:26px;margin:0 0 50px;}
+.ruler i{width:1px;background:var(--line);}
+.ruler i.mj{background:var(--steel);}
+
+/* ---------- About / stats ---------- */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start;}
+.about-copy p{font-size:16.5px;line-height:1.8;color:var(--muted);margin-bottom:16px;}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.stat-box{
+  background:var(--alu-light);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;position:relative;
+}
+.stat-box::before{content:attr(data-code);position:absolute;top:14px;right:16px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--steel-light);letter-spacing:1px;}
+.stat-box h3{font-size:36px;color:var(--navy);font-weight:700;}
+.stat-box span{font-size:13.5px;color:var(--muted);}
+
+/* ---------- Services ---------- */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.service-card{
+  padding:32px 26px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  transition:.3s;position:relative;overflow:hidden;
+}
+.service-card:hover{border-color:var(--steel);transform:translateY(-6px);box-shadow:0 20px 40px rgba(11,31,58,.08);}
+.service-card .ico{
+  width:50px;height:50px;border-radius:10px;background:var(--navy);color:var(--amber);
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+}
+.service-card .ico svg{width:24px;height:24px;}
+.service-card h3{font-size:19px;margin-bottom:10px;color:var(--navy);}
+.service-card p{font-size:14.5px;color:var(--muted);line-height:1.6;}
+.service-card .num{
+  position:absolute;top:20px;right:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--line);
 }
 
-section{
-padding:100px 8%;
+/* ---------- Catalogue ---------- */
+.cat-bg{background:var(--alu-light);}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.filters button{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:1px;
+  padding:10px 18px;border-radius:30px;border:1px solid var(--line);background:#fff;color:var(--muted);
+  cursor:pointer;transition:.2s;text-transform:uppercase;
+}
+.filters button:hover{border-color:var(--steel);color:var(--steel);}
+.filters button.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+.search-box{margin:26px 0 46px;position:relative;max-width:520px;}
+.search-box input{
+  width:100%;padding:16px 20px 16px 46px;font-size:15px;border:1px solid var(--line);border-radius:10px;
+  outline:none;background:#fff;font-family:'Inter',sans-serif;
+}
+.search-box input:focus{border-color:var(--steel);box-shadow:0 0 0 3px rgba(27,77,137,.12);}
+.search-box::before{
+  content:"";position:absolute;left:18px;top:50%;transform:translateY(-50%);
+  width:14px;height:14px;border:2px solid var(--muted);border-radius:50%;
+}
+.search-box::after{
+  content:"";position:absolute;left:29px;top:calc(50% + 6px);width:7px;height:2px;background:var(--muted);transform:rotate(45deg);
+}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;}
+.product{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s;
+}
+.product:hover{box-shadow:0 20px 40px rgba(11,31,58,.1);transform:translateY(-4px);}
+.product .img-wrap{position:relative;height:200px;overflow:hidden;background:var(--navy-deep);}
+.product img{width:100%;height:100%;object-fit:cover;transition:.5s;}
+.product:hover img{transform:scale(1.06);}
+.product .cat-badge{
+  position:absolute;top:12px;left:12px;background:rgba(7,21,39,.85);color:var(--amber);
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:1px;padding:5px 10px;border-radius:5px;text-transform:uppercase;
+}
+.product .body{padding:22px;}
+.product .ref{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--steel-light);letter-spacing:1px;margin-bottom:8px;display:block;}
+.product h3{font-size:18px;color:var(--navy);margin-bottom:6px;}
+.product p{font-size:14px;color:var(--muted);margin-bottom:18px;}
+.product a{
+  display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-size:13.5px;font-weight:600;
+  padding:11px 18px;border-radius:8px;text-decoration:none;transition:.2s;
+}
+.product a:hover{background:var(--steel);}
+.no-results{display:none;text-align:center;padding:60px 0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:1px;}
+
+/* ---------- Contact ---------- */
+.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+.contact-info{display:grid;gap:16px;}
+.contact-card{padding:24px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);display:flex;gap:16px;align-items:flex-start;}
+.contact-card .ico{
+  width:42px;height:42px;border-radius:9px;background:var(--alu-light);color:var(--steel);
+  display:flex;align-items:center;justify-content:center;flex:none;
+}
+.contact-card .ico svg{width:20px;height:20px;}
+.contact-card h3{font-size:15px;color:var(--navy);margin-bottom:4px;}
+.contact-card p{font-size:14.5px;color:var(--muted);}
+.btn-contact{
+  display:inline-block;margin-top:12px;padding:11px 20px;background:#25D366;color:white;
+  text-decoration:none;border-radius:8px;font-weight:600;font-size:13.5px;
+}
+.map iframe{width:100%;height:100%;min-height:360px;border:none;border-radius:var(--radius);filter:grayscale(.15);}
+
+/* ---------- Footer ---------- */
+footer{background:var(--navy-deep);color:#fff;padding:80px 6% 34px;margin-top:0;}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-logo p{margin-top:14px;color:var(--alu);font-size:14.5px;line-height:1.7;max-width:320px;}
+.footer-col h4{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--amber);margin-bottom:18px;text-transform:uppercase;}
+.footer-col a{display:block;text-decoration:none;color:var(--alu);font-size:14.5px;margin-bottom:12px;transition:.2s;}
+.footer-col a:hover{color:#fff;}
+.footer-copy{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:26px;
+  color:#7c8798;font-size:13px;font-family:'IBM Plex Mono',monospace;
 }
 
-.section-title{
-text-align:center;
-margin-bottom:60px;
+/* ---------- Floating WhatsApp ---------- */
+.floating-whatsapp{
+  position:fixed;bottom:28px;right:28px;width:60px;height:60px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;color:white;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);z-index:9999;transition:.3s;
 }
+.floating-whatsapp svg{width:28px;height:28px;}
+.floating-whatsapp:hover{transform:scale(1.1);}
 
-.section-title h2{
-font-size:42px;
-color:#173F8C;
-margin-bottom:15px;
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  .about-grid{grid-template-columns:1fr;}
+  .services{grid-template-columns:repeat(2,1fr);}
+  .contact-container{grid-template-columns:1fr;}
+  .hero h1{font-size:44px;}
+  .compass{opacity:.25;width:480px;height:480px;right:-160px;}
 }
-
-.section-title p{
-color:#64748b;
-font-size:18px;
+@media(max-width:760px){
+  nav{position:fixed;top:70px;left:0;width:100%;background:var(--navy-deep);flex-direction:column;
+    align-items:flex-start;padding:26px 6%;gap:20px;transform:translateY(-130%);transition:.35s;border-bottom:1px solid rgba(255,255,255,.08);}
+  nav.open{transform:translateY(0);}
+  .burger{display:flex;}
+  .services{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;gap:34px;}
+  .hero-coord{display:none;}
+  section{padding:80px 0;}
+  .hero h1{font-size:36px;}
 }
-
 </style>
-
 </head>
-
 <body>
 
 <header>
-
-<div class="logo">
-M.CHAGDAL AERO ATLAS
-</div>
-
-<nav>
-
-<a href="#about">À propos</a>
-
-<a href="#services">Services</a>
-
-<a href="#catalogue">Catalogue</a>
-
-<a href="#contact">Contact</a>
-
-</nav>
-
+  <div class="logo">
+    <div class="mark">✈</div>
+    <div>
+      M.CHAGDAL AERO ATLAS
+      <small>AVIATION · AUTOMOBILE · POIDS LOURDS</small>
+    </div>
+  </div>
+  <nav id="nav">
+    <a href="#about">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#catalogue">Catalogue</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="https://wa.me/212533299000" target="_blank">WhatsApp</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
+  <div class="hero-grid"></div>
+  <div class="compass">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="98" fill="none" stroke="#3B6FA6" stroke-width="0.6"/>
+      <circle cx="100" cy="100" r="80" fill="none" stroke="#3B6FA6" stroke-width="0.4"/>
+      <g stroke="#C9CED6" stroke-width="0.6">
+        <line x1="100" y1="4" x2="100" y2="18"/>
+        <line x1="100" y1="182" x2="100" y2="196"/>
+        <line x1="4" y1="100" x2="18" y2="100"/>
+        <line x1="182" y1="100" x2="196" y2="100"/>
+      </g>
+      <g fill="#E8A33D" font-family="IBM Plex Mono" font-size="11">
+        <text x="96" y="30">N</text><text x="96" y="176">S</text>
+        <text x="24" y="104">W</text><text x="168" y="104">E</text>
+      </g>
+      <path d="M100 40 L108 100 L100 92 L92 100 Z" fill="#E8A33D" opacity="0.85"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <span class="eyebrow">IMPORTATEUR AGRÉÉ · DE · BE</span>
+    <h1>Pièces & véhicules d'exception, <em>importés d'Allemagne et de Belgique.</em></h1>
+    <p>Aéronefs, automobiles premium et composants poids lourds, sélectionnés selon des standards d'ingénierie européens et livrés à Casablanca.</p>
+    <div class="hero-cta">
+      <a href="#catalogue" class="btn btn-primary">Explorer le catalogue</a>
+      <a href="https://wa.me/212533299000" target="_blank" class="btn btn-outline">Parler à un conseiller</a>
+    </div>
+  </div>
+  <div class="hero-coord">
+    <span>LAT <span>33.5731° N</span></span>
+    <span>LON <span>7.5898° W</span></span>
+    <span>ICAO <span>GMMN</span></span>
+  </div>
+</section>
 
-<div>
-
-<h1>
-
-Aircraft • Vehicles •
-
-<span>Premium Parts</span>
-
-</h1>
-
-<p>
-
-Importateur marocain spécialisé dans les pièces aéronautiques,
-automobiles et poids lourds de fabrication allemande et belge.
-
-</p>
-
-<a href="#catalogue" class="btn">
-
-Découvrir le catalogue
-
-</a>
-
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>MERCEDES-BENZ</span><span>PORSCHE</span><span>MAN</span><span>CESSNA</span><span>DIAMOND AIRCRAFT</span><span>PIPER</span><span>RANGE ROVER</span><span>BREMBO</span>
+    <span>MERCEDES-BENZ</span><span>PORSCHE</span><span>MAN</span><span>CESSNA</span><span>DIAMOND AIRCRAFT</span><span>PIPER</span><span>RANGE ROVER</span><span>BREMBO</span>
+  </div>
 </div>
 
-</section>
 <!-- ================= ABOUT ================= -->
-
 <section id="about">
-
-    <div class="section-title">
-        <h2>À propos</h2>
-        <p>
-            M.CHAGDAL AERO ATLAS est une entreprise marocaine spécialisée
-            dans l'importation de pièces aéronautiques, automobiles et
-            poids lourds provenant d'Allemagne et de Belgique.
-        </p>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="tag">01 · Qui sommes-nous</span>
+        <h2 style="font-size:36px;font-weight:700;color:var(--navy);margin-bottom:22px;line-height:1.2;">Une passerelle entre l'ingénierie européenne et le marché marocain.</h2>
+        <p>M.Chagdal Aero Atlas est une société marocaine basée à Casablanca, spécialisée dans l'importation et la distribution de pièces aéronautiques, automobiles et poids lourds.</p>
+        <p>Nous proposons également la vente d'aéronefs et de véhicules sélectionnés selon des normes de qualité strictes, avec un accompagnement technique à chaque étape.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat-box" data-code="EXP-01"><h3>15+</h3><span>Années d'expérience</span></div>
+        <div class="stat-box" data-code="CLI-02"><h3>1000+</h3><span>Clients satisfaits</span></div>
+        <div class="stat-box" data-code="ORG-03"><h3>DE · BE</h3><span>Origine des pièces</span></div>
+        <div class="stat-box" data-code="SUP-04"><h3>24/7</h3><span>Support WhatsApp</span></div>
+      </div>
     </div>
-
-    <div class="stats">
-
-        <div class="stat-box">
-            <h3>15+</h3>
-            <span>Années d'expérience</span>
-        </div>
-
-        <div class="stat-box">
-            <h3>500+</h3>
-            <span>Produits disponibles</span>
-        </div>
-
-        <div class="stat-box">
-            <h3>100%</h3>
-            <span>Qualité Premium</span>
-        </div>
-
-        <div class="stat-box">
-            <h3>24/7</h3>
-            <span>Support Client</span>
-        </div>
-
-    </div>
-
+  </div>
 </section>
 
 <!-- ================= SERVICES ================= -->
-
-<section id="services">
-
-    <div class="section-title">
-        <h2>Nos Services</h2>
-        <p>
-            Nous proposons des solutions complètes pour les secteurs
-            aéronautique, automobile et poids lourds.
-        </p>
+<section id="services" style="background:var(--alu-light);">
+  <div class="wrap">
+    <div class="section-title reveal">
+      <span class="tag">02 · Nos domaines</span>
+      <h2>Trois univers, une même exigence.</h2>
+      <p>Des solutions professionnelles pour l'aviation légère, l'automobile premium et le transport lourd.</p>
     </div>
-
     <div class="services">
-
-        <div class="service-card">
-            <div class="icon">✈️</div>
-            <h3>Aviation</h3>
-            <p>
-                Vente d'avions, pièces aéronautiques,
-                accessoires et maintenance.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">🚗</div>
-            <h3>Automobile</h3>
-            <p>
-                Pièces automobiles Premium
-                pour véhicules européens.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">🚛</div>
-            <h3>Poids Lourds</h3>
-            <p>
-                Pièces pour camions,
-                moteurs et systèmes de freinage.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <div class="icon">📦</div>
-            <h3>Import & Export</h3>
-            <p>
-                Importation directe depuis
-                l'Allemagne et la Belgique.
-            </p>
-        </div>
-
+      <div class="service-card reveal">
+        <span class="num">A</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16l20-6-2-2-9 2-5-5-2 1 3 5-5 2 1 2 5-1 3 4 2-1-2-4z"/></svg></div>
+        <h3>Aviation</h3>
+        <p>Vente d'avions légers, pièces certifiées, équipements aéronautiques et accompagnement technique.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="num">B</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17a2 2 0 104 0M15 17a2 2 0 104 0M3 17V11l2-5h12l3 5v6M3 11h16"/></svg></div>
+        <h3>Automobile</h3>
+        <p>Véhicules premium, pièces d'origine allemande et service personnalisé pour chaque client.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="num">C</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V7h9v9M12 10h5l3 4v2h-8M6.5 19a2 2 0 100-4 2 2 0 000 4zM17.5 19a2 2 0 100-4 2 2 0 000 4z"/></svg></div>
+        <h3>Poids Lourds</h3>
+        <p>Distribution de composants pour camions, transport professionnel et maintenance.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="num">D</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+        <h3>Pièces Détachées</h3>
+        <p>Importation directe depuis l'Allemagne et la Belgique, contrôlée avant expédition.</p>
+      </div>
     </div>
-
+  </div>
 </section>
 
-<style>
-
-/* ================= ABOUT ================= */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:50px;
-}
-
-.stat-box{
-background:#fff;
-padding:35px;
-text-align:center;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.stat-box h3{
-font-size:42px;
-color:#b91c1c;
-margin-bottom:10px;
-}
-
-/* ================= SERVICES ================= */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.service-card{
-background:#fff;
-padding:35px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.service-card:hover{
-transform:translateY(-8px);
-}
-
-.icon{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.service-card h3{
-margin-bottom:15px;
-color:#173F8C;
-}
-
-.service-card p{
-color:#64748b;
-line-height:1.7;
-}
-
-</style>
-
-        <!-- ================= CATALOGUE ================= -->
-
-<section id="catalogue">
-
-    <div class="section-title">
-        <h2>Notre Catalogue</h2>
-        <p>
-            Découvrez notre sélection d'avions, véhicules et pièces Premium.
-        </p>
+<!-- ================= CATALOGUE ================= -->
+<section id="catalogue" class="cat-bg">
+  <div class="wrap">
+    <div class="section-title reveal">
+      <span class="tag">03 · Catalogue</span>
+      <h2>Une sélection haut de gamme.</h2>
+      <p>Filtrez par catégorie ou recherchez une référence précise.</p>
     </div>
 
-    <div class="search-box">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Rechercher un produit..."
-            onkeyup="searchProducts()">
+    <div class="filters reveal">
+      <button class="active" data-filter="all">Tout</button>
+      <button data-filter="avion">Avions</button>
+      <button data-filter="voiture">Voitures</button>
+      <button data-filter="camion">Poids Lourds</button>
+      <button data-filter="piece">Pièces</button>
+    </div>
+    <div class="search-box reveal">
+      <input type="text" id="searchInput" placeholder="Rechercher un modèle, une référence…" onkeyup="filterProducts()">
     </div>
 
     <div class="catalog-grid" id="products">
-
-        <div class="product" data-name="Cessna 172 avion">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cessna_172_C-FKWO.jpg" alt="Cessna 172">
-            <h3>Cessna 172 Skyhawk</h3>
-            <p>Avion léger 4 places.</p>
-            <a class="btn" href="https://wa.me/212533299000" target="_blank">WhatsApp</a>
+      <div class="product reveal" data-cat="avion" data-name="cessna 172 skyhawk avion aviation">
+        <div class="img-wrap"><span class="cat-badge">Avion</span><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cessna_172_C-FKWO.jpg" alt="Cessna 172 Skyhawk" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. AV-172-SKY</span>
+          <h3>Cessna 172 Skyhawk</h3>
+          <p>Avion léger 4 places, référence mondiale de l'aviation générale.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
         </div>
+      </div>
 
-        <div class="product" data-name="Diamond DA40 avion">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Diamond_DA40.jpg" alt="Diamond DA40">
-            <h3>Diamond DA40</h3>
-            <p>Avion moderne.</p>
-            <a class="btn" href="https://wa.me/212533299000" target="_blank">WhatsApp</a>
+      <div class="product reveal" data-cat="avion" data-name="diamond da40 avion aviation">
+        <div class="img-wrap"><span class="cat-badge">Avion</span><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Diamond_DA40.jpg" alt="Diamond DA40" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. AV-DA40-M</span>
+          <h3>Diamond DA40</h3>
+          <p>Avion moderne, cellule composite et avionique de dernière génération.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
         </div>
+      </div>
 
-        <div class="product" data-name="Porsche 911 voiture">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/2008_Porsche_911_997_Carrera_2S.jpg" alt="Porsche 911">
-            <h3>Porsche 911</h3>
-            <p>Voiture sportive Premium.</p>
-            <a class="btn" href="https://wa.me/212533299000" target="_blank">WhatsApp</a>
+      <div class="product reveal" data-cat="avion" data-name="piper pa28 archer avion aviation ecole">
+        <div class="img-wrap"><span class="cat-badge">Avion</span><img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Piper_PA-28-181_Archer_II.jpg" alt="Piper PA-28" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. AV-PA28-A</span>
+          <h3>Piper PA-28 Archer</h3>
+          <p>Avion école, robuste et économique, idéal pour la formation.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
         </div>
+      </div>
 
-        <div class="product" data-name="Mercedes Classe G">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Blinker_Mercedes_G-Klasse_AMG_2018.jpg" alt="Mercedes Classe G">
-            <h3>Mercedes Classe G</h3>
-            <p>SUV de luxe.</p>
-            <a class="btn" href="https://wa.me/212533299000" target="_blank">WhatsApp</a>
+      <div class="product reveal" data-cat="voiture" data-name="porsche 911 voiture sport allemande">
+        <div class="img-wrap"><span class="cat-badge">Voiture</span><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/2008_Porsche_911_997_Carrera_2S.jpg" alt="Porsche 911" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. AU-911-997</span>
+          <h3>Porsche 911 Carrera</h3>
+          <p>Sport premium, châssis allemand, entretien tracé et documenté.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
         </div>
+      </div>
 
+      <div class="product reveal" data-cat="voiture" data-name="mercedes classe g suv premium allemande">
+        <div class="img-wrap"><span class="cat-badge">Voiture</span><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Blinker_Mercedes_G-Klasse_AMG_2018.jpg" alt="Mercedes Classe G" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. AU-GKL-AMG</span>
+          <h3>Mercedes Classe G</h3>
+          <p>SUV premium, robustesse légendaire et finition intégrale.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
+        </div>
+      </div>
+
+      <div class="product reveal" data-cat="voiture" data-name="range rover sport suv luxury">
+        <div class="img-wrap"><span class="cat-badge">Voiture</span><img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Range_Rover_Sport.jpg" alt="Range Rover Sport" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. AU-RRS-L461</span>
+          <h3>Range Rover Sport</h3>
+          <p>SUV de luxe, confort et capacités tout-terrain reconnues.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
+        </div>
+      </div>
+
+      <div class="product reveal" data-cat="camion" data-name="man tgx camion poids lourd">
+        <div class="img-wrap"><span class="cat-badge">Poids lourd</span><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/MAN_TGX.jpg" alt="MAN TGX" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. PL-TGX-18</span>
+          <h3>MAN TGX 18.500</h3>
+          <p>Poids lourd longue distance, efficience et fiabilité éprouvées.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
+        </div>
+      </div>
+
+      <div class="product reveal" data-cat="camion" data-name="mercedes actros camion poids lourd">
+        <div class="img-wrap"><span class="cat-badge">Poids lourd</span><img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Mercedes-Benz_Actros.jpg" alt="Mercedes Actros" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. PL-ACT-MP4</span>
+          <h3>Mercedes Actros</h3>
+          <p>Camion professionnel, référence du transport lourd en Europe.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
+        </div>
+      </div>
+
+      <div class="product reveal" data-cat="piece" data-name="turbo diesel piece detachee allemande">
+        <div class="img-wrap"><span class="cat-badge">Pièce</span><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Turbocharger.jpg" alt="Turbo Diesel" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. PC-TRB-GE</span>
+          <h3>Turbo Diesel</h3>
+          <p>Fabrication allemande, contrôlé avant expédition vers le Maroc.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
+        </div>
+      </div>
+
+      <div class="product reveal" data-cat="piece" data-name="kit freinage brembo piece detachee belge">
+        <div class="img-wrap"><span class="cat-badge">Pièce</span><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Brembo_Brakes.jpg" alt="Kit de freinage" loading="lazy"></div>
+        <div class="body">
+          <span class="ref mono">REF. PC-BRK-BE</span>
+          <h3>Kit de Freinage</h3>
+          <p>Fabrication belge, homologué pour véhicules premium et utilitaires.</p>
+          <a href="https://wa.me/212533299000" target="_blank">Demander un devis →</a>
+        </div>
+      </div>
     </div>
-
+    <p class="no-results" id="noResults">— AUCUNE RÉFÉRENCE TROUVÉE —</p>
+  </div>
 </section>
+
 <!-- ================= CONTACT ================= -->
-
 <section id="contact">
-
-    <div class="section-title">
-        <h2>Contactez-nous</h2>
-        <p>Notre équipe est disponible pour répondre à toutes vos demandes.</p>
+  <div class="wrap">
+    <div class="section-title reveal">
+      <span class="tag">04 · Contact</span>
+      <h2>Contactez-nous.</h2>
+      <p>Notre équipe est disponible pour répondre à toutes vos demandes.</p>
     </div>
-
     <div class="contact-container">
-
-        <div class="contact-info">
-
-            <div class="contact-card">
-                <h3>📞 Téléphone</h3>
-                <p>+212 533 29 90 00</p>
-            </div>
-
-            <div class="contact-card">
-                <h3>📱 WhatsApp</h3>
-                <p>+212 533 29 90 00</p>
-                <a class="btn" href="https://wa.me/212533299000" target="_blank">
-                    Discuter sur WhatsApp
-                </a>
-            </div>
-
-            <div class="contact-card">
-                <h3>📧 Email</h3>
-                <p>muhammedchagdal@yahoo.com</p>
-            </div>
-
-            <div class="contact-card">
-                <h3>📍 Adresse</h3>
-                <p>Casablanca, Maroc</p>
-            </div>
-
+      <div class="contact-info reveal">
+        <div class="contact-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><h3>Téléphone</h3><p>+212 533 29 90 00</p></div>
         </div>
-
-        <div class="map">
-            <iframe
-                src="https://www.google.com/maps?q=Casablanca,Morocco&output=embed"
-                width="100%"
-                height="420"
-                style="border:0;border-radius:15px;"
-                loading="lazy"
-                allowfullscreen>
-            </iframe>
+        <div class="contact-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+          <div>
+            <h3>WhatsApp</h3><p>+212 533 29 90 00</p>
+            <a class="btn-contact" href="https://wa.me/212533299000" target="_blank">Discuter sur WhatsApp</a>
+          </div>
         </div>
-
+        <div class="contact-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg></div>
+          <div><h3>Email</h3><p>muhammedchagdal@yahoo.com</p></div>
+        </div>
+        <div class="contact-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3>Adresse</h3><p>Casablanca, Maroc</p></div>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe src="https://www.google.com/maps?q=Casablanca,Morocco&output=embed" loading="lazy" allowfullscreen></iframe>
+      </div>
     </div>
-
+  </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
-
 <footer>
-
-    <h2>M.CHAGDAL AERO ATLAS</h2>
-
-    <p>
-        Aircraft • Vehicles • Premium Spare Parts
-    </p>
-
-    <br>
-
-    <a href="#about">À propos</a> |
-    <a href="#services">Services</a> |
-    <a href="#catalogue">Catalogue</a> |
-    <a href="#contact">Contact</a>
-
-    <br><br>
-
-    <p>© 2026 M.CHAGDAL AERO ATLAS. Tous droits réservés.</p>
-
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <div class="logo" style="color:#fff;"><div class="mark">✈</div><div>M.CHAGDAL AERO ATLAS</div></div>
+        <p>Importateur marocain de pièces aéronautiques, automobiles et poids lourds — Casablanca, Maroc.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+212533299000">+212 533 29 90 00</a>
+        <a href="mailto:muhammedchagdal@yahoo.com">muhammedchagdal@yahoo.com</a>
+        <a href="https://wa.me/212533299000" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>© 2026 M.Chagdal Aero Atlas. Tous droits réservés.</span>
+      <span>33.5731° N / 7.5898° W · GMMN</span>
+    </div>
+  </div>
 </footer>
 
-<a class="floating-whatsapp"
-   href="https://wa.me/212533299000"
-   target="_blank">
-💬
+<a class="floating-whatsapp" href="https://wa.me/212533299000" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012 0 11.9 11.9 0 000 12a11.8 11.8 0 001.6 6L0 24l6.3-1.6A11.9 11.9 0 0012 24a11.9 11.9 0 0012-12 11.8 11.8 0 00-3.5-8.5zM12 21.8a9.7 9.7 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1121.8 12 9.8 9.8 0 0112 21.8zm5.4-7.3c-.3-.1-1.7-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 01-2.3-1.4 8.7 8.7 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.4a.5.5 0 000-.5c-.1-.1-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.1 1.1 0 00-.8.4 3.4 3.4 0 00-1 2.5 5.9 5.9 0 001.3 3.2 13.5 13.5 0 005.2 4.6c.7.3 1.3.5 1.7.6a4.1 4.1 0 001.9.1 3.1 3.1 0 002-1.4 2.5 2.5 0 00.2-1.4c-.1-.1-.3-.2-.6-.3z"/></svg>
 </a>
+
+<script>
+// mobile nav
+const burger=document.getElementById('burger');
+const nav=document.getElementById('nav');
+burger.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+// header shrink on scroll
+window.addEventListener('scroll',()=>{
+  document.querySelector('header').style.boxShadow = window.scrollY>10 ? '0 6px 24px rgba(0,0,0,.25)' : 'none';
+});
+
+// catalogue: combined search + filter
+let activeFilter='all';
+const products=[...document.querySelectorAll('.product')];
+const noResults=document.getElementById('noResults');
+
+function applyFilters(){
+  const q=document.getElementById('searchInput').value.trim().toLowerCase();
+  let visible=0;
+  products.forEach(p=>{
+    const matchesCat = activeFilter==='all' || p.dataset.cat===activeFilter;
+    const matchesSearch = p.dataset.name.includes(q);
+    const show = matchesCat && matchesSearch;
+    p.style.display = show ? '' : 'none';
+    if(show) visible++;
+  });
+  noResults.style.display = visible===0 ? 'block' : 'none';
+}
+function filterProducts(){ applyFilters(); }
+
+document.querySelectorAll('.filters button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter=btn.dataset.filter;
+    applyFilters();
+  });
+});
+
+// scroll reveal
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ruler divider generator (decorative, injected once)
+document.querySelectorAll('.section-title').forEach(()=>{});
+</script>
+</body>
+</html>
+
